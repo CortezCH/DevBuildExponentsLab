@@ -6,16 +6,17 @@ namespace ExponentsPowersTable
     class Program
     {
         /*---------------------------------------------LAB SUMMARY----------------------------------------------------------
-         * Prompt: Tell us what kind of loop you used and describe how your solution would have changed if you had used a different type of loop.
-         * 
-         * Answer: For my lab I decided to use a for loop for it's ease of use of dealing with containers. If I had used a different type of loop
-         *         I would have had to implement a counter variable to keep track of how many times the loop has run so I know what index I would
-         *         be on. This variablr would also be what I used to make sure the loop ended eventually.
-         *         
-         *
-         *
-         *
-         */
+        * Prompt: Tell us what kind of loop you used and describe how your solution would have changed if you had used a different type of loop.
+        * 
+        * Answer: For my lab I decided to use a for loop for it's ease of use of dealing with containers. If I had used a different type of loop
+        *         I would have had to implement a counter variable to keep track of how many times the loop has run so I know what index I would
+        *         be on. This variablr would also be what I used to make sure the loop ended eventually.
+        *         
+        *
+        *
+        *
+        */
+
         static void Main(string[] args)
         {
             //Initialisze variables for userInteger (holds user input),
@@ -66,7 +67,7 @@ namespace ExponentsPowersTable
             if (!int.TryParse(input, out int number)
                 || number <= 0
                 || number > maxValue)
-            {
+            {//If it fails any of the tests we want the user to try again and then revalidate their new input
                 Console.WriteLine("That was an invalid input.");
                 return ValidateUserInput(GetUserInput(prompt), prompt, maxValue);
             }
@@ -76,6 +77,7 @@ namespace ExponentsPowersTable
 
         public static string GetUserInput(string prompt)
         {
+            //Display a prompt to the user and take in their answer to the prompt
             Console.Write(prompt);
             string output = Console.ReadLine().Trim().ToLower();
 
@@ -84,6 +86,7 @@ namespace ExponentsPowersTable
 
         public static void SetRange(ref List<int> numRange)
         {
+            //Iterate through the Range and just set each index to the number it matches
             for (int i = 0; i < numRange.Capacity; i++)
             {
                 numRange.Add(i + 1);
@@ -92,6 +95,7 @@ namespace ExponentsPowersTable
 
         public static void CalculateSquares(ref List<int> squares)
         {
+            //Iterate through each index and square that index value
             for (int i = 1; i <= squares.Capacity; i++)
             {
                 squares.Add(i * i);
@@ -100,6 +104,7 @@ namespace ExponentsPowersTable
 
         public static void CalculateCubes(ref List<int> cubes)
         {
+            //Iterate through each index and assign the cube to each 
             for (int i = 1; i <= cubes.Capacity; i++)
             {
                 cubes.Add(i * i * i);
@@ -109,6 +114,7 @@ namespace ExponentsPowersTable
         public static void DisplayTable(List<int> numberRange, 
             List<int> numberSquared, List<int> numberCubed)
         {
+            //Iterate from 1 until the value the user entered and display the number, square of that number, and cube of that number.
             for (int j = 0; j < numberRange.Capacity; j++)
             {
                 Console.WriteLine("{0,-20:n0}{1,-20:n0}{2,-20:n0}", numberRange[j], numberSquared[j], numberCubed[j]);
@@ -116,24 +122,23 @@ namespace ExponentsPowersTable
         }
 
         public static bool Continue()
+    {
+        string answer = GetUserInput("Continue? (y/n): ");
+
+        if (answer.ToLower() == "y")
         {
-            string answer = GetUserInput("Continue? (y/n): ");
-
-            if (answer.ToLower() == "y")
-            {
-                return true;
-            }
-            else if (answer.ToLower() == "n")
-            {
-                Console.WriteLine("Goodbye!");
-                return false;
-            }
-            else
-            {
-                Console.WriteLine("Please enter either Y or N to continue.");
-                return Continue();
-            }
-
+            return true;
         }
+        else if (answer.ToLower() == "n")
+        {
+            Console.WriteLine("Goodbye!");
+            return false;
+        }
+        else
+        {
+            Console.WriteLine("Please enter either Y or N to continue.");
+            return Continue();
+        }
+    }
     }
 }
