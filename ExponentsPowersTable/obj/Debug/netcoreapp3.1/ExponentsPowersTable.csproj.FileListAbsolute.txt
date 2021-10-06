@@ -1,0 +1,14 @@
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\bin\Debug\netcoreapp3.1\ExponentsPowersTable.exe
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\bin\Debug\netcoreapp3.1\ExponentsPowersTable.deps.json
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\bin\Debug\netcoreapp3.1\ExponentsPowersTable.runtimeconfig.json
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\bin\Debug\netcoreapp3.1\ExponentsPowersTable.runtimeconfig.dev.json
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\bin\Debug\netcoreapp3.1\ExponentsPowersTable.dll
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\bin\Debug\netcoreapp3.1\ExponentsPowersTable.pdb
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\obj\Debug\netcoreapp3.1\ExponentsPowersTable.csproj.AssemblyReference.cache
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\obj\Debug\netcoreapp3.1\ExponentsPowersTable.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\obj\Debug\netcoreapp3.1\ExponentsPowersTable.AssemblyInfoInputs.cache
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\obj\Debug\netcoreapp3.1\ExponentsPowersTable.AssemblyInfo.cs
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\obj\Debug\netcoreapp3.1\ExponentsPowersTable.csproj.CoreCompileInputs.cache
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\obj\Debug\netcoreapp3.1\ExponentsPowersTable.dll
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\obj\Debug\netcoreapp3.1\ExponentsPowersTable.pdb
+C:\Users\CCHRISTIAN1\OneDrive - KNEX\Documents\DevBuild\Weeks\Week 1\Labs Repo\ExponentsPowersTable\ExponentsPowersTable\obj\Debug\netcoreapp3.1\ExponentsPowersTable.genruntimeconfig.cache
