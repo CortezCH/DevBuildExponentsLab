@@ -5,58 +5,134 @@ namespace ExponentsPowersTable
 {
     class Program
     {
+        /*---------------------------------------------LAB SUMMARY----------------------------------------------------------
+         * Prompt: Tell us what kind of loop you used and describe how your solution would have changed if you had used a different type of loop.
+         * 
+         * Answer: For my lab I decided to use a for loop for it's ease of use of dealing with containers. If I had used a different type of loop
+         *         I would have had to implement a counter variable to keep track of how many times the loop has run so I know what index I would
+         *         be on. This variablr would also be what I used to make sure the loop ended eventually.
+         *         
+         *
+         *
+         *
+         */
         static void Main(string[] args)
         {
             //Initialisze variables for userInteger (holds user input),
             //maxInputAllowed (max cube that an int can hold),
-            //int array to hold the number range,
-            //int array to hold the square's array,
-            //int array to hold the cubed array,
             int userinteger;
             int maxInputAllowed = Convert.ToInt32( Math.Floor( Math.Cbrt(Int32.MaxValue) ) );
 
-            // Ask the user for an integer
-            Console.Write("Please enter an integer: ");
-            // Parse their answer into userInteger
-            int.TryParse(Console.ReadLine(), out userinteger);
+            //Create a while loop to control whether to keep asking them for numbers
+            bool keepGoing = true;
 
-
-
-            //Iitialize conatiners to hold the number range, the squares, and the cubes
-            List<int> numberRange = new List<int>(userinteger);
-            List<int> numberSquared = new List<int>(userinteger);
-            List<int> numberCubed = new List<int>(userinteger);
-
-            //Iterate through the containers to set the squares and cubes
-            for (int i = 0; i < userinteger; i++)
+            while (keepGoing)
             {
-                numberRange.Add(i+1);
-                numberSquared.Add(numberRange[i] * numberRange[i]);
-                numberCubed.Add(numberRange[i] * numberRange[i] * numberRange[i]);
+
+                // Ask the user for an integer
+                // Parse their answer into userInteger
+                // Validate their input is valid 
+                int.TryParse(ValidateUserInput(GetUserInput("Please enter an integer between 1 and 1290: "),
+                    "Please enter an integer between 1 and 1290: ", maxInputAllowed), out userinteger);
+
+                //Iitialize conatiners to hold the number range, the squares, and the cubes
+                List<int> numberRange = new List<int>(userinteger);
+                List<int> numberSquared = new List<int>(userinteger);
+                List<int> numberCubed = new List<int>(userinteger);
+
+                //Iterate through the containers to set the squares and cubes
+                SetRange(ref numberRange);
+                CalculateSquares(ref numberSquared);
+                CalculateCubes(ref numberCubed);
+
+                //Display full table of inputs
+                Console.WriteLine("{0,-20}{1,-20}{2,-20}", "Number", "Squared", "Cubed");
+                Console.WriteLine("{0,-20}{1,-20}{2,-20}", "=======", "=======", "======");
+                DisplayTable(numberRange, numberSquared, numberCubed);
+
+                keepGoing = Continue();
+
             }
 
-            //Display full table of inputs
-            Console.WriteLine("Number        Squared       Cubed");
-            Console.WriteLine("=======       =======       ======");
 
-            for (int j = 0; j < userinteger; j++)
+        }
+
+        public static string ValidateUserInput(string input, string prompt, int maxValue)
+        {
+            // Make sure the users input meets these criterium
+            //      Is a number
+            //      Is not less than or equal to 0
+            //      Is not larger than the largest allowed int value
+            if (!int.TryParse(input, out int number)
+                || number <= 0
+                || number > maxValue)
             {
-                Console.Write( numberRange[j] );
-                Console.Write("       ");
-                Console.Write( numberSquared[j] );
-                Console.Write("       ");
-                Console.Write( numberCubed[j] );
-                Console.WriteLine();
+                Console.WriteLine("That was an invalid input.");
+                return ValidateUserInput(GetUserInput(prompt), prompt, maxValue);
             }
 
-            //Validate that the entered number isn't 0 or negative,
-            //and keep prompting for new number
-            //
-            //
-            //
-            //
+            return input;
+        }
 
-            
+        public static string GetUserInput(string prompt)
+        {
+            Console.Write(prompt);
+            string output = Console.ReadLine().Trim().ToLower();
+
+            return output;
+        }
+
+        public static void SetRange(ref List<int> numRange)
+        {
+            for (int i = 0; i < numRange.Capacity; i++)
+            {
+                numRange.Add(i + 1);
+            }
+        }
+
+        public static void CalculateSquares(ref List<int> squares)
+        {
+            for (int i = 1; i <= squares.Capacity; i++)
+            {
+                squares.Add(i * i);
+            }
+        }
+
+        public static void CalculateCubes(ref List<int> cubes)
+        {
+            for (int i = 1; i <= cubes.Capacity; i++)
+            {
+                cubes.Add(i * i * i);
+            }
+        }
+
+        public static void DisplayTable(List<int> numberRange, 
+            List<int> numberSquared, List<int> numberCubed)
+        {
+            for (int j = 0; j < numberRange.Capacity; j++)
+            {
+                Console.WriteLine("{0,-20:n0}{1,-20:n0}{2,-20:n0}", numberRange[j], numberSquared[j], numberCubed[j]);
+            }
+        }
+
+        public static bool Continue()
+        {
+            string answer = GetUserInput("Continue? (y/n): ");
+
+            if (answer.ToLower() == "y")
+            {
+                return true;
+            }
+            else if (answer.ToLower() == "n")
+            {
+                Console.WriteLine("Goodbye!");
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("Please enter either Y or N to continue.");
+                return Continue();
+            }
 
         }
     }
